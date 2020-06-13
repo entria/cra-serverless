@@ -1,8 +1,9 @@
-import React, { useCallback } from 'react'
-import { useLocation, NavLink } from 'react-router-dom'
-import styled from 'styled-components'
+import React, { useCallback } from 'react';
+import { useLocation, NavLink } from 'react-router-dom';
+import styled from 'styled-components';
+import { v4 as uuidv4 } from 'uuid';
 
-const activeClassName = 'active'
+const activeClassName = 'active';
 
 const StyledLink = styled(NavLink).attrs({
   activeClassName,
@@ -41,15 +42,13 @@ const Wrapper = styled.div`
 `
 
 export const Navigation = () => {
-  const location = useLocation()
+  const location = useLocation();
 
   const isDetailsActive = useCallback(() => {
-    return location.pathname.indexOf('details/') > -1
+    return location.pathname.indexOf('qr/') > -1
   }, [location.pathname])
 
-  const random = Math.random()
-    .toString(36)
-    .substring(2, 15)
+  const id = uuidv4();
 
   return (
     <Wrapper>
@@ -62,7 +61,7 @@ export const Navigation = () => {
 
         <ListItem>
           <StyledLink
-            to={'/details/' + random}
+            to={'/qr/' + id}
             activeClassName={activeClassName}
             isActive={isDetailsActive}
           >

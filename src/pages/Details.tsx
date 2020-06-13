@@ -1,6 +1,6 @@
-import React from 'react'
-import { Helmet } from 'react-helmet-async'
-import { withRouter } from 'react-router'
+import React from 'react';
+import { Helmet } from 'react-helmet-async';
+import { withRouter } from 'react-router';
 
 export const Details = withRouter(({ match: { params: { id } } }) => (
   <>

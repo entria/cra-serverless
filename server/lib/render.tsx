@@ -1,10 +1,10 @@
 import { readFileSync } from 'fs'
-import React from 'react'
-import { renderToString } from 'react-dom/server'
-import { HelmetData } from 'react-helmet'
-import { HelmetProvider } from 'react-helmet-async'
-import { StaticRouter } from 'react-router-dom'
-import { ServerStyleSheet } from 'styled-components'
+import React from 'react';
+import { renderToString } from 'react-dom/server';
+import { HelmetData } from 'react-helmet';
+import { HelmetProvider } from 'react-helmet-async';
+import { StaticRouter } from 'react-router-dom';
+import { ServerStyleSheet } from 'styled-components';
 
 import { files } from '../config'
 const html = readFileSync(files.index).toString()

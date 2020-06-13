@@ -1,22 +1,19 @@
-import React from 'react'
-import { Helmet } from 'react-helmet-async'
-import { Route, Switch } from 'react-router'
-import styled, { createGlobalStyle } from 'styled-components'
+import React from 'react';
+import { Helmet } from 'react-helmet-async';
+import { Route, Switch } from 'react-router';
+import styled, { createGlobalStyle } from 'styled-components';
 
-import { Details } from './pages/Details'
-import { NotFound } from './pages/Error'
-import { Home } from './pages/Home'
+import { Details } from './pages/Details';
+import { NotFound } from './pages/Error';
+import { Home } from './pages/Home';
 
-import { Footer } from './components/Footer'
-import { Navigation } from './components/Navigation'
+import { Footer } from './components/Footer';
+import { Navigation } from './components/Navigation';
 
-const GlobalStyles = createGlobalStyle`
+const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-      sans-serif;
-
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -28,17 +25,17 @@ const Wrapper = styled.div`
 
 const App: React.FC = () => (
   <>
-    <GlobalStyles />
+    <GlobalStyle />
 
     <Helmet>
-      <title>{process.env.REACT_APP_NAME}</title>
+      <title>My App</title>
     </Helmet>
 
     <Wrapper>
       <Navigation />
 
       <Switch>
-        <Route path="/details/:id" component={Details} />
+        <Route path="/qr/:id" component={Details} />
         <Route path="/" component={Home} exact />
 
         <Route component={NotFound} />
